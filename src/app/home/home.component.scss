@@ -1,0 +1,24 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+//   .add-button {
+//     display: flex;
+//     align-items: center;
+//     cursor: pointer;
+//   }
+.example-card{
+    margin-top: 20px;
+    
+}
+::ng-deep.mat-card-header-text{
+        margin: 0 !important;
+    }
+.details {
+    display: flex;
+    span{
+        align-content: space-between;
+        width: 20%;
+    }
+
+}

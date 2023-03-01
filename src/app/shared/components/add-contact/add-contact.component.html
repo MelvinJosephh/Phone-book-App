@@ -1,0 +1,23 @@
+<h1 mat-dialog-title style="text-align: center;">Add Contact</h1>
+<div mat-dialog-content [formGroup] = "addContactForm">
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input matInput formControlName="phone">
+      </mat-form-field>
+</div>
+<div mat-dialog-actions >
+  <button mat-raised-button color="default" (click)="onNoClick()">Cancel</button>
+  <button  mat-raised-button color="primary" (click)="saveContact()">Save Contact</button>
+</div>

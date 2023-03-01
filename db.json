@@ -1,25 +1,5 @@
 {
   "contacts": [
-    {
-      "firstName": "Peter",
-      "lastName": "Munyua",
-      "email": "test@gmail.com",
-      "phone": "0734534545",
-      "id": "429de2fe-3019-4100-b05c-608df85c654d"
-    },
-    {
-      "firstName": "sdfdf",
-      "lastName": "ddf",
-      "email": "test@gmail.com",
-      "phone": "0384939483",
-      "id": "89365a11-3c3f-4bd9-b427-c4eb4a4f8837"
-    },
-    {
-      "firstName": "kelly",
-      "lastName": "rihanna",
-      "email": "minaj@gmail.com",
-      "phone": "0798687565",
-      "id": "2c83fe9a-0f4c-462b-82cd-b03694b6e3d5"
-    }
+    
   ]
 }

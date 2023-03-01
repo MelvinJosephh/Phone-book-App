@@ -19,13 +19,18 @@ export class AddContactComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
     this.addContactForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.maxLength(10)]],
       lastName: ['', [Validators.required, Validators.maxLength(10)]],
       email: ['',[ Validators.email, Validators.required]],
       phone: ['', [Validators.required, Validators.maxLength(10), Validators.minLength(10)]]
     })
+
+    if(this.data) {
+      this.addContactForm.patchValue({
+        ...this.data
+      })
+    }
 
   }
 

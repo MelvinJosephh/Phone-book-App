@@ -1,0 +1,15 @@
+<ng-container *ngIf="(contact$ | async) as contactDetail">
+    <mat-card class="contact-card">
+        <mat-card-header>
+            <mat-card-title>Contact Details</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+            <h4>Full name:  {{contactDetail.firstName}} {{contactDetail.firstName}}</h4>
+            <p>Phone Number: {{contactDetail.phone}}</p>
+            <p>Email: {{contactDetail.email}}</p>
+
+            <a routerLink="/" mat-button><mat-icon>arrow_back</mat-icon> Back</a>
+        </mat-card-content>
+    </mat-card>
+</ng-container>

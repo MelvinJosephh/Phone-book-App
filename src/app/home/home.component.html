@@ -1,27 +1,92 @@
-<mat-toolbar color="primary">
+<div class="wrapper" style="margin: 50px auto;">
 
-    <span>Phone Book App</span>
-    <span class="example-spacer"></span>
-    <button mat-raised-button (click)="addContact()">
-        <mat-icon>add</mat-icon>
-        Add Contact
-    </button>
-</mat-toolbar>
+    <div style="display: flex; justify-content: end; margin: 20px 0;">
+        <mat-icon class="mat-24"  (click)="toggleDesign(true)">view_list</mat-icon>
+        <mat-icon class="mat-18" style="margin-right: 15px;" (click)="toggleDesign(false)">grid_view</mat-icon>
+    </div>
 
-<div style="width: 60%; margin: 50px auto;">
-    <mat-card class="example-card" *ngFor="let contact of contacts">
-        <mat-card-header>
-            <mat-card-title><span>{{contact.firstName}}</span><span style="margin-left: 20px;">{{contact.lastName}}</span></mat-card-title>
 
-        </mat-card-header>
-        <mat-card-content>
-            <div style="display: flex; align-content: space-between;">
-                <span style="flex-grow: 4;">Phone Number: {{contact.phone}}</span>
-                <div>
-                    <button mat-raised-button color="danger">Delete</button>
-                    <button mat-raised-button color="primary">Details</button>
+    <div style="display: flex; justify-content: end;">
+        <button mat-raised-button color="primary" (click)="openDialog()">
+            <mat-icon>add</mat-icon>
+            Add Contact
+        </button>
+    </div>
+
+    <ng-container *ngIf="listViewDesign; else grid">
+        <mat-card class="example-card" *ngFor="let contact of contacts">
+            <mat-card-header>
+                <mat-card-title><span>{{contact.firstName}}</span><span
+                        style="margin-left: 20px;">{{contact.lastName}}</span></mat-card-title>
+
+            </mat-card-header>
+            <mat-card-content>
+                <div style="display: flex; align-content: space-between;">
+                    <span style="flex-grow: 4;">Phone Number: {{contact.phone}}</span>
+                    <div>
+
+                        <button mat-icon-button [matMenuTriggerFor]="menu">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu" xPosition="before">
+                            <button mat-menu-item [routerLink]="['/contact', contact.id]">
+                                <mat-icon>visibility</mat-icon>
+                                <span>View</span>
+                            </button>
+                            <button mat-menu-item (click)="openDialog(contact)">
+                                <mat-icon>edit</mat-icon>
+                                <span>Update</span>
+                            </button>
+                            <button mat-menu-item (click)="deleteContact(contact.id)">
+                                <mat-icon>delete</mat-icon>
+                                <span>Delete</span>
+                            </button>
+                        </mat-menu>
+                    </div>
                 </div>
-            </div>
-        </mat-card-content>
-    </mat-card>
+            </mat-card-content>
+        </mat-card>
+    </ng-container>
+
+
+    <ng-template #grid>
+        <mat-grid-list cols="3" rowHeight="2:1">
+            <mat-grid-tile *ngFor="let contact of contacts">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <mat-card-title><span>{{contact.firstName}}</span><span
+                                style="margin-left: 20px;">{{contact.lastName}}</span></mat-card-title>
+
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div style="display: flex; align-content: space-between;">
+                            <span style="flex-grow: 4;">Phone Number: {{contact.phone}}</span>
+                            <div>
+
+                                <button mat-icon-button [matMenuTriggerFor]="menu">
+                                    <mat-icon>more_vert</mat-icon>
+                                </button>
+                                <mat-menu #menu="matMenu" xPosition="before">
+                                    <button mat-menu-item [routerLink]="['/contact', contact.id]">
+                                        <mat-icon>visibility</mat-icon>
+                                        <span>View</span>
+                                    </button>
+                                    <button mat-menu-item (click)="openDialog(contact)">
+                                        <mat-icon>edit</mat-icon>
+                                        <span>Update</span>
+                                    </button>
+                                    <button mat-menu-item (click)="deleteContact(contact.id)">
+                                        <mat-icon>delete</mat-icon>
+                                        <span>Delete</span>
+                                    </button>
+                                </mat-menu>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+
+            </mat-grid-tile>
+        </mat-grid-list>
+    </ng-template>
+
 </div>

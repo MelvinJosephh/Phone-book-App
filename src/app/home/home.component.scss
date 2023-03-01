@@ -1,24 +1,30 @@
 .example-spacer {
     flex: 1 1 auto;
-  }
-
-//   .add-button {
-//     display: flex;
-//     align-items: center;
-//     cursor: pointer;
-//   }
-.example-card{
-    margin-top: 20px;
-    
 }
-::ng-deep.mat-card-header-text{
-        margin: 0 !important;
-    }
+.example-card {
+    margin-top: 20px;
+
+}
+
+::ng-deep.mat-card-header-text {
+    margin: 0 !important;
+}
+
+::ng-deep.mat-grid-tile-content {
+    width: 100%;
+}
+
 .details {
     display: flex;
-    span{
-        align-content: space-between;
-        width: 20%;
+    justify-content: space-between;
+}
+.wrapper {
+    width: 70%;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        width: 95%;
     }
 
 }

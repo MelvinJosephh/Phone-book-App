@@ -31,7 +31,7 @@ This project used mock data in arrays present in JSON Server (a Node Module that
 Run `npm install -g json-server` on a different terminal to install Json Server
 Run `json-server -v` to confirm json server version.
 
-Please ensure you run Json Server alongside the app so that the app can effectively link the data from the database.
+Please ensure you run Json Server `json-server --watch db.json` alongside the app so that the app can effectively link the data from the database.
 
 In response to the screening test, this app allows the user to add contact details (including FirstName, LastName, Email, and Phone Number).
 The app has used UUID, (a Universal Unique Identifier), as an Id to help uniquely identify the contacts. This makes it easier to edit, delete and update the single contacts.

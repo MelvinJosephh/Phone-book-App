@@ -1,5 +1,25 @@
 {
   "contacts": [
-    
+    {
+      "firstName": "Melvin",
+      "lastName": "Joseph",
+      "email": "collins.2000@gmail.com",
+      "phone": "0702035351",
+      "id": "9da1e551-228c-4e60-81b2-c4ed995cb6df"
+    },
+    {
+      "firstName": "Kelvin",
+      "lastName": "George",
+      "email": "kelvin@gmail.com",
+      "phone": "0705782873",
+      "id": "a78735cc-ce43-4f28-9a44-c087ec0654e1"
+    },
+    {
+      "firstName": "Alex",
+      "lastName": "Kasau",
+      "email": "hello@gmail.com",
+      "phone": "0782635362",
+      "id": "c960063b-c691-46b7-8125-32803e1d8ea6"
+    }
   ]
 }

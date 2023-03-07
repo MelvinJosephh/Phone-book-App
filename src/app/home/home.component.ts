@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.contactService.getAllContacts().subscribe(res => {
-      this.contacts = res;
+      this.contacts = res.sort((a,b)=>(a.firstName>b.firstName) ? 1: -1);
     })
   }
 
